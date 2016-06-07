@@ -1,4 +1,4 @@
-#include "configmanager.h"
+﻿#include "configmanager.h"
 #include <QFileInfo>
 #include <QDir>
 #include <QDebug>
@@ -104,7 +104,7 @@ QJsonArray ConfigManager::xmlConfigToJsonArray(const QString &xmlConfigPath)
 
     QXmlStreamReader xml(xmlConfigfile);
 
-    QHash<QString, QString> attrMapping ({
+    QHash<QString, QString> attrMapping = {
         {"sshHost", "ssh_host"},
         {"sshUser", "ssh_user"},
         {"sshPassword", "ssh_password"},
@@ -113,7 +113,7 @@ QJsonArray ConfigManager::xmlConfigToJsonArray(const QString &xmlConfigPath)
         {"namespaceSeparator", "namespace_separator"},
         {"connectionTimeout", "timeout_connect"},
         {"executeTimeout", "timeout_execute"},
-    });
+    };
 
     while (!xml.atEnd() && !xml.hasError())
     {
